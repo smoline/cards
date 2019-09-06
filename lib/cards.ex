@@ -69,15 +69,26 @@ defmodule Cards do
       {:error, _reason} -> "That file does not exist"
     end
   end
+
+  # iex(4)> ["red", color] = ["red", "blue"]
+  # ["red", "blue"]
+  # iex(5)> color
+  # "blue"
+  # iex(6)> red
+  # ** (CompileError) iex:6: undefined function red/0
+
+  # iex(6)> ["red", color] = ["green", "blue"]
+  # ** (MatchError) no match of right hand side value: ["green", "blue"]
+
+  # pipe operator
+
+  def create_hand(hand_size) do
+    # deck = Cards.create_deck
+    # deck = Cards.shuffle(deck)
+    # hand = Cards.deal(deck, hand_size)
+
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
+  end
 end
-
-# iex(4)> ["red", color] = ["red", "blue"]
-# ["red", "blue"]
-# iex(5)> color
-# "blue"
-# iex(6)> red
-# ** (CompileError) iex:6: undefined function red/0
-
-# iex(6)> ["red", color] = ["green", "blue"]
-# ** (MatchError) no match of right hand side value: ["green", "blue"]
-
