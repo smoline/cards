@@ -51,9 +51,33 @@ defmodule Cards do
   # {status, binary} = File.read("my_deck")
   # :erlang.binary_to_term(binary)
 
+  # pattern matching in case statements
+
+  # def load(filename) do
+  #   {status, binary} = File.read(filename)
+  #   case status do
+  #     :ok -> :erlang.binary_to_term binary
+  #     :error -> "That file does not exist"
+  #   end
+  # end
+
+  # better
+
   def load(filename) do
-    {status, binary} = File.read(filename)
-    :erlang.binary_to_term binary
+    case File.read(filename) do
+      {:ok, binary} -> :erlang.binary_to_term binary
+      {:error, _reason} -> "That file does not exist"
+    end
   end
 end
+
+# iex(4)> ["red", color] = ["red", "blue"]
+# ["red", "blue"]
+# iex(5)> color
+# "blue"
+# iex(6)> red
+# ** (CompileError) iex:6: undefined function red/0
+
+# iex(6)> ["red", color] = ["green", "blue"]
+# ** (MatchError) no match of right hand side value: ["green", "blue"]
 
