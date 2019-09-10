@@ -1,11 +1,24 @@
 defmodule Cards do
-
   def hello do
     "hi there!"
   end
   @moduledoc """
     Provides methods for creating and handling a deck of cards
   """
+
+  @doc """
+    Returns a list of strings repersenting a deck of playing cards
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+       "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
+       "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
+       "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
+       "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+  """
+
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -15,6 +28,15 @@ defmodule Cards do
     end
   end
 
+  @doc """
+    Shuffles the playing cards, given a deck as a argument
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> deck = Cards.shuffle(deck)
+  """
+
   def shuffle(deck) do
     Enum.shuffle(deck)
   end
@@ -23,12 +45,19 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
-  # iex -S mix
-  # Pattern Matching
-  # { hand, rest_of_deck } = Cards.deal(deck, 5)
-  # now when you type in hand, you will only see your hand
-
   # [ color1, color2 ] = [ "red", "blue" ]
+
+  @doc """
+    Divides a deck into a hand and the remainder of the deck.
+    The `handsize` argument indicates how many cards should be in the hand.
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> {hand, rest_of_deck} = Cards.deal(deck, 5)
+      iex> hand
+      ["Two of Hearts", "Three of Diamonds", "Five of Spades", "Five of Diamonds", "Ace of Diamonds"]
+  """
 
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
