@@ -126,7 +126,7 @@ Cards      </h1>
   <div class="summary-signature">
     <a href="#shuffle/1">shuffle(deck)</a>
   </div>
-    <div class="summary-synopsis"><p>  Shuffles the playing cards, given a deck</p></div>
+    <div class="summary-synopsis"><p>  Shuffles the playing cards, given a deck as a argument</p></div>
 </div>
   </div>
         </section>
@@ -160,6 +160,17 @@ Functions          </h1>
   </div>
   <section class="docstring">
 <p>  Returns a list of strings repersenting a deck of playing cards</p>
+<h2 id="create_deck/0-examples" class="section-heading">
+  <a href="#create_deck/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Cards</span><span class="o">.</span><span class="n">create_deck</span><span class="w">
+</span><span class="p" data-group-id="5182655419-1">[</span><span class="s">&quot;Ace of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Spades&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;Five of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Clubs&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;Four of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Hearts&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;Three of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Diamonds&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;Two of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Diamonds&quot;</span><span class="p" data-group-id="5182655419-1">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="create_hand/1">
@@ -184,6 +195,15 @@ Functions          </h1>
   <section class="docstring">
 <p>  Divides a deck into a hand and the remainder of the deck.
   The <code class="inline">handsize</code> argument indicates how many cards should be in the hand.</p>
+<h2 id="deal/2-examples" class="section-heading">
+  <a href="#deal/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Cards</span><span class="o">.</span><span class="n">create_deck</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="p" data-group-id="3248028757-1">{</span><span class="n">hand</span><span class="p">,</span><span class="w"> </span><span class="n">rest_of_deck</span><span class="p" data-group-id="3248028757-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Cards</span><span class="o">.</span><span class="n">deal</span><span class="p" data-group-id="3248028757-2">(</span><span class="n">deck</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="3248028757-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">hand</span><span class="w">
+</span><span class="p" data-group-id="3248028757-3">[</span><span class="s">&quot;Two of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Diamonds&quot;</span><span class="p" data-group-id="3248028757-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="hello/0">
@@ -228,7 +248,14 @@ Functions          </h1>
     <h1 class="signature">shuffle(deck)</h1>
   </div>
   <section class="docstring">
-<p>  Shuffles the playing cards, given a deck</p>
+<p>  Shuffles the playing cards, given a deck as a argument</p>
+<h2 id="shuffle/1-examples" class="section-heading">
+  <a href="#shuffle/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Cards</span><span class="o">.</span><span class="n">create_deck</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Cards</span><span class="o">.</span><span class="n">shuffle</span><span class="p" data-group-id="1593759616-1">(</span><span class="n">deck</span><span class="p" data-group-id="1593759616-1">)</span></code></pre>
   </section>
 </section>
           </div>

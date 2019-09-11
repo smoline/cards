@@ -1,7 +1,9 @@
 defmodule Cards do
+
   def hello do
     "hi there!"
   end
+
   @moduledoc """
     Provides methods for creating and handling a deck of cards
   """
@@ -11,12 +13,13 @@ defmodule Cards do
 
   ## Examples
 
-      iex> deck = Cards.create_deck
+      iex> Cards.create_deck
       ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
        "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
        "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
        "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
        "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+
   """
 
   def create_deck do
@@ -30,21 +33,28 @@ defmodule Cards do
 
   @doc """
     Shuffles the playing cards, given a deck as a argument
-
-  ## Examples
-
-      iex> deck = Cards.create_deck
-      iex> deck = Cards.shuffle(deck)
   """
 
   def shuffle(deck) do
     Enum.shuffle(deck)
   end
 
+  @doc """
+    Determines whether a deck contains a given card
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+
+  """
+
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
 
+  # Pattern Matching
   # [ color1, color2 ] = [ "red", "blue" ]
 
   @doc """
@@ -54,9 +64,10 @@ defmodule Cards do
   ## Examples
 
       iex> deck = Cards.create_deck
-      iex> {hand, rest_of_deck} = Cards.deal(deck, 5)
+      iex> {hand, _rest_of_deck} = Cards.deal(deck, 5)
       iex> hand
-      ["Two of Hearts", "Three of Diamonds", "Five of Spades", "Five of Diamonds", "Ace of Diamonds"]
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades", "Five of Spades"]
+
   """
 
   def deal(deck, hand_size) do
